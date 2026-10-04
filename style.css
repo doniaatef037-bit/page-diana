@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* خلفية الحرير الفخمة */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url("Minimalist beige silk texture.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  opacity: 1;
+  z-index: -1;
+}
+
+/* الحاوية الرئيسية المفردة لسنترة العنوان والأيقونات في المنتصف */
+.main-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column; /* يجعل النص يظهر فوق الأيقونات */
+  align-items: center; /* يسنتر العناصر أفقياً */
+  justify-content: center;
+  gap: 35px; /* مسافة راقية بين العنوان والأيقونات */
+  width: 100%;
+  z-index: 100;
+}
+
+/* تنسيق خط كلمة Connect With Us */
+.follow-title {
+  font-family: "Playfair Display", serif, sans-serif;
+  font-size: 32px;
+  color: white;
+  background-color: rgb(214, 159, 86);
+  font-weight: 600;
+  color: #2b2b2b;
+  text-transform: uppercase;
+  letter-spacing: 3px; /* مسافات أنيقة بين الحروف */
+  margin: 0;
+  text-align: center;
+}
+
+/* حاوية الأيقونات لتوزيعها بالعرض */
+.social-links {
+  display: flex;
+  flex-direction: row; /* الأيقونات تكون بجانب بعضها */
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* مسافة مناسبة بين الأيقونات */
+  width: 100%;
+}
+
+.social-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+/* حجم أنيق وواضح للأيقونات */
+.social-links img {
+  width: 85px;
+  height: 85px;
+  object-fit: contain;
+  filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.25));
+}
+
+.social-links a:hover {
+  transform: scale(1.15); /* تكبير خفيف وممتع عند الوقوف بالماوس */
+}
+
+/* التنسيق الشاشات الصغيرة والموبايل */
+@media (max-width: 768px) {
+  .main-container {
+    gap: 25px;
+  }
+
+  .follow-title {
+    font-size: 24px;
+  }
+
+  .social-links {
+    flex-direction: column; /* الأيقونات تنزل تحت بعضها عمودياً في الموبايل */
+    gap: 20px;
+  }
+
+  .social-links img {
+    width: 70px;
+    height: 70px;
+  }
+}
